@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Disease Prediction</title>
+</head>
+<body>
+    <h1>Leaf Disease Prediction</h1>
+    <form method="post" action="/predict" enctype="multipart/form-data">
+        <label for="image">Upload Leaf Image:</label>
+        <input type="file" name="image" accept=".jpg, .jpeg, .png" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
